@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>My Website</title>
-        <Linl rel="stylesheet" href="../Styles/style.css"
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     </head>
     <body>
     <!-- Creating a intro section of my website-->
@@ -11,12 +11,10 @@
         <h2>About Me</h2>
         <p>I am a senior at the <strong>University of Maryland</strong> and a double major in <strong>Finance</strong> and <strong>Information Systems</strong>.</p>
         <p>I am 22 years old and I have 4 sisters and 3 dogs.</p>
-    <!-- Third paragraph with an id attribute -->
-        <p id="career-goals">I am actively pursuing internship and full-time opportunities in the financial sector, where I hope to apply my skills in data analytics and financial modeling to drive business decisions.</p>
+        <p id="career-goals">I am actively pursuing full-time opportunities in the financial sector, where I hope to apply my skills in data analytics and financial modeling to drive business decisions.</p>
         <h2>My Interests</h2>
-        <p>I love to watch <em>football, play golf, and ski</em>.</p>
-        <p>I want to start my career in the <em>financial sector</em>.</p>
         <p class="highlight">I love to watch <em>football, play golf, and ski</em>.</p>
+        <p>I want to start my career in the <em>financial sector</em>.</p>
 
         <p>My favorite hobbies:</p>
         <ol>
@@ -58,7 +56,7 @@
             </tr>
         </table>
         <!-- img tag with logo class applied -->
-        <img src="umd_logo.png" class="logo" alt="UMD Logo">
+        <img src="{{ url_for('static', filename='images/umd_logo.png') }}" class="logo" alt="UMD Logo">
 
         <p><a href="/hello" target="_blank">Hello Route</a></p>
 
