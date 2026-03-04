@@ -1,0 +1,42 @@
+/* ---- Paragraph Styles ---- */
+p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333333;
+    margin-bottom: 12px;
+}
+
+/* ---- Level 2 Header Styles ---- */
+h2 {
+    color: #cc0000;
+    font-size: 22px;
+    border-bottom: 2px solid #cc0000;
+    padding-bottom: 4px;
+}
+
+/* ---- Table Border Styles ---- */
+table, th, td {
+    border: 2px solid #cc0000;
+    padding: 8px 12px;
+    border-collapse: collapse;
+}
+
+/* ID selector for third paragraph */
+#career-goals {
+    background-color: #fff4f4;
+    font-style: italic;
+    padding: 10px;
+    border-left: 4px solid #cc0000;
+}
+
+/* Class selector applied to highlight paragraph */
+.highlight {
+    font-weight: bold;
+    color: #cc0000;
+}
+
+/* img.logo - only applies to img tags with class logo */
+img.logo {
+    width: 150px;
+    height: 150px;
+}
