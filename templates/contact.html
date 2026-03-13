@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+
+{% if submitted %}
+    <div class="alert alert-success">
+        <h4>Thank you, {{ first_name }}!</h4>
+        <p>Here is what you submitted:</p>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>First Name:</strong> {{ first_name }}</li>
+            <li class="list-group-item"><strong>Last Name:</strong> {{ last_name }}</li>
+            <li class="list-group-item"><strong>Email:</strong> {{ email }}</li>
+            <li class="list-group-item"><strong>Message:</strong> {{ message }}</li>
+        </ul>
+        <a href="/contact" class="btn btn-secondary mt-3">Submit Another</a>
+    </div>
+{% else %}
+    <h2 class="mb-4">Contact Us</h2>
+    <form action="/contact" method="POST">
+        <div class="mb-3">
+            <label for="first_name" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="first_name" name="first_name" required>
+        </div>
+        <div class="mb-3">
+            <label for="last_name" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="last_name" name="last_name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endif %}
+
+{% endblock %}
