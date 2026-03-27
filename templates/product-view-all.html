@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    View All Products
+{% endblock %}
+
+{% block page_head %}
+    View All Products
+{% endblock %}
+
+{% block page_content %}
+
+    <div class="row">
+    <div class="col">
+
+    <table class="table table-striped">
+        <tr>
+            <th>Product Name</th>
+            <th>Product Code</th>
+            <th>Product Price</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for each_product in products %}
+        <tr>
+            <td>{{ each_product['product_name'] }}</td>
+            <td>{{ each_product['product_code'] }}</td>
+            <td>{{ "$%.2f"|format(each_product['product_price']) }}</td>
+            <td>
+                <a href="{{ url_for('product_edit', product_id=each_product['product_id']) }}" class="btn btn-secondary" role="button">Edit</a>
+                <a href="{{ url_for('product_delete', product_id=each_product['product_id']) }}" class="btn btn-secondary" role="button">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Total Number of Products: {{ products|length }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col text-center">
+             <a href="{{ url_for('product_create') }}" class="btn btn-primary" role="button">Add New Product</a>
+        </div>
+    </div>
+
+{% endblock %}
